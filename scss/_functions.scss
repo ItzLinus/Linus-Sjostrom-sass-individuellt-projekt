@@ -1,0 +1,46 @@
+// Mixin för basen för hemsidan, detta är alltså standard för vart saker kommer vara
+@mixin base {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Mixin för att få effekten osv.
+@mixin background-args {
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+
+background-attachment: fixed;  //Fixed gör att du får scroll effecten. Byt ut "fixed" till "scroll" för att få en fast vy.
+}
+
+// Mixin för hur font ser ut, storlek osv.
+@mixin font-face($font-name, $weight: normal, $size: normal) {
+    font-family: quote($font-name);
+    font-weight: $weight;
+    font-size: $size;
+}
+
+@mixin text-transform($arg) {
+    text-transform: $arg;
+}
+
+// Mixin för opacity 
+@mixin opacity($opacity) {
+    opacity: $opacity;
+   filter: alpha(opacity=($opacity * 100));
+}
+
+// Mixin för att placera en grupp allmänt
+@mixin align-items($position) {
+    align-items:$position;
+}
+
+// Mixin för att flytta saker mer specifikt.
+@mixin position($position: null, $top: null, $bottom: null, $right: null, $left: null) {
+    position: $position;
+    top: $top;
+    bottom: $bottom;
+    right: $right;
+    left: $left;
+}

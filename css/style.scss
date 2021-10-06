@@ -1,0 +1,319 @@
+@import '../scss/_variables.scss';
+@import '../scss/_functions.scss';
+// Kod som applicerat till allt på hemsidan om inget annat satts.
+* {
+  @include base;
+}
+
+// Kod för att anpassa body och html.
+body, html {
+    height:100%;
+    margin:0;
+    @include font-face("Helvetica", 400px, normal);
+    line-height: 1.8em;
+    color:$color-main;
+}
+// Koden för headern så att den är på rätt plats och rätt färg
+header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+  }
+  // Kod för att få navbaren se bättre ut i flera olika sammanhang.
+  .nav-toggle {
+    @include position(absolute, -9999px, null, null, -9999px);
+  }
+  
+  .nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+  }
+  
+  .nav-toggle-label {
+    @include position(absolute, 0, null, null, 0);
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    @include align-items(center);
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  
+  // Kod för hur navbar fungerar
+  nav {
+    margin-top: 20px;
+    text-align: left;
+    @include position(absolute, 80%, null, null, 0%);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 1em;
+      margin-left: 1em;
+    }
+
+    a{
+      @include opacity(1.0);
+      color: $color-main;
+      text-decoration: none;
+      @include font-face("Helvetica", normal, 1.2rem);
+      @include text-transform(uppercase);
+    }
+  }
+  
+  nav a{
+    @include opacity(1.0);
+    color: $color-main;
+    text-decoration: none;
+    @include font-face("Helvetica", normal, 1.2rem);
+    @include text-transform(uppercase);
+    
+  }
+
+  nav a:hover {
+    @include opacity(0.7);
+    transition: opacity .1s ease-out;
+  }
+  
+  .nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ nav a {
+    @include opacity(1.0);
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  
+  // Styledelen som anpassar så att sidan blir responsive och mer anpassad till mobila enheter.
+  @media screen and (min-width: 800px) {
+    .nav-toggle-label {
+      display: none;
+    }
+  
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+    
+    .logo {
+      grid-column: 2 / 3;
+      padding-top: 20px;
+    }
+    
+    nav {
+      @include position(relative, initial, null, null, initial);
+      text-align: left;
+      transition: none;
+      transform: scale(1,1);
+      background: none;
+      
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: flex-end;
+      @include align-items(center);
+    }
+    
+    nav ul {
+      display: flex;
+    }
+    
+    nav li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+    
+    nav a {
+      @include opacity(1.0);
+      position: relative;
+    }
+    
+    nav a::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background: rgb(59, 55, 55);
+      @include position(absolute, -.75em, null, 0, 0);
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+    
+    nav a:hover::before {
+      transform: scale(1,1);
+    }
+  }
+// Kod för det "synliga" på hemsidan här under är allt som behövs för att 
+//få bilderna på rätt plats och få "parallax" effekten
+.pimg1, .pimg2, .pimg3{
+    position:relative;
+    @include opacity(0.80);
+    @include background-args;
+}
+
+.pimg1{
+    background-image:url('../img/main.png');
+    min-height: 100%;
+}
+
+.pimg2{
+    background-image:url('../img/gameplay.jpg');
+    min-height: 900px;
+}
+
+.pimg3{
+    background-image:url('../img/objective.jpg');
+    min-height: 900px;
+}
+
+//Delat up sidan i olika sektions där du kan infoga text mellan bilderna.
+.section{
+    text-align: center;
+    padding: 50px 80px;
+}
+//Light-mode för framtida justeringar
+.section-light{
+    @extend .section;
+    background-color:$color-light;
+    color:$color-main;
+}
+//Dark-mode för framtida justeringar
+.section-dark{
+    @extend .section;
+    background-color:$color-dark;
+    color:$color-main;
+}
+//Texten som står på bilden och hur den anpassas
+.ptext {
+    @include position(absolute, 50%, null, null, null);    
+    width: 100%;
+    text-align: center;
+    color:#000;
+    @include font-face("Helvetica", normal, 27px);
+    letter-spacing: 8px;
+    @include text-transform(uppercase);
+}
+
+.ptext .border{
+    background-color: #111;
+    color:#fff;
+    padding:20px;
+}
+
+.ptext .border.trans{
+    background-color: transparent;
+}
+// Kod för att stänga av parallax effekten på mobila enheter 
+// så de inte överstressas.
+@media(max-width:568px){
+    .pimg1, .pimg2, .pimg3{
+        background-attachment: scroll; // Annars är det "fixed" för att få effekten
+    }
+}
+
+// Kod för hur knappar samt text fungerar i footern.
+footer{
+  @include position(static, null, 0, 0, 0);
+  background:#111;
+  height: auto;
+  @include font-face("Opensans", normal, normal);
+  
+  padding-top: 40px;
+  color: #fff;
+}
+
+.footer-content{
+  display: flex;
+  @include align-items(center);
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3{
+  @include font-face("Helvetica", 400, 1.8rem);
+  @include text-transform(capitalize);
+  line-height: 3rem;
+}
+
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  @include font-face("Helvetica", normal, 14px);
+  text-align: center;
+}
+
+.socials{
+  list-style: none;
+  display: flex;
+  @include align-items(center);
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+  margin: 0 10px;
+}
+
+.socials a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a i{
+  @include font-face("Helvetica", normal, 1.1rem);
+  transition: color .4s ease;
+}
+
+.socials a:hover i{
+  color:aqua
+}
+
+.footer-bottom{
+  background: #000;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p{
+  @include font-face("Helvetica", normal, 14px);
+  word-spacing: 2px;
+  @include text-transform(capitalize);
+}
+
+.footer-bottom span{
+  @include text-transform(uppercase);
+  @include opacity(0.7);
+  @include font-face("Helvetica", 400px, normal);
+}
