@@ -20,7 +20,7 @@ background-attachment: fixed;  //Fixed gör att du får scroll effecten. Byt ut 
     font-weight: $weight;
     font-size: $size;
 }
-
+// Mixin för att göra om text till Versaler eller Gemener
 @mixin text-transform($arg) {
     text-transform: $arg;
 }
@@ -44,3 +44,22 @@ background-attachment: fixed;  //Fixed gör att du får scroll effecten. Byt ut 
     right: $right;
     left: $left;
 }
+
+
+// Animation mixin
+@mixin animation-mixin($name, $from, $to) {
+    @keyframes #{$name} {
+      0% {transform: translate3d($from, 0, 0); opacity: 0;}
+      100% {transform: translate3d($to, 0, 0); opacity: 1;}
+    }
+  }
+
+// Transition
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }

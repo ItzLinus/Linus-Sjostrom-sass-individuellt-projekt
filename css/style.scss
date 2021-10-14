@@ -71,7 +71,7 @@ header {
     width: 100%;
     transform: scale(1, 0);
     transform-origin: top;
-    transition: transform 400ms ease-in-out;
+    @include transition(transform 400ms ease-in-out);
 
     ul {
       margin: 0;
@@ -104,7 +104,7 @@ header {
 
   nav a:hover {
     @include opacity(0.7);
-    transition: opacity .1s ease-out;
+    @include transition(opacity .1s ease-out);
   }
   
   .nav-toggle:checked ~ nav {
@@ -113,7 +113,7 @@ header {
   
   .nav-toggle:checked ~ nav a {
     @include opacity(1.0);
-    transition: opacity 250ms ease-in-out 250ms;
+    @include transition(opacity 250ms ease-in-out 250ms);
   }
   
   // Styledelen som anpassar så att sidan blir responsive och mer anpassad till mobila enheter.
@@ -166,7 +166,7 @@ header {
       background: rgb(59, 55, 55);
       @include position(absolute, -.75em, null, 0, 0);
       transform: scale(0, 1);
-      transition: transform ease-in-out 250ms;
+      @include transition(transform ease-in-out 250ms);
     }
     
     nav a:hover::before {
@@ -175,24 +175,29 @@ header {
   }
 // Kod för det "synliga" på hemsidan här under är allt som behövs för att 
 //få bilderna på rätt plats och få "parallax" effekten
-.pimg1, .pimg2, .pimg3{
+.main, .modes, .pimg3, .ranking{
     position:relative;
     @include opacity(0.80);
     @include background-args;
 }
 
-.pimg1{
+.main{
     background-image:url('../img/main.png');
     min-height: 100%;
 }
 
-.pimg2{
-    background-image:url('../img/gameplay.jpg');
+.modes{
+    background-image:url('../img/modes.jpg');
     min-height: 900px;
 }
 
 .pimg3{
     background-image:url('../img/objective.jpg');
+    min-height: 900px;
+}
+
+.ranking{
+    background-image:url('../img/ranking.png');
     min-height: 900px;
 }
 
@@ -213,6 +218,15 @@ header {
     background-color:$color-dark;
     color:$color-main;
 }
+h2{
+  padding-bottom: 20px;
+}
+p {
+  filter: drop-shadow(16px 16px 20px black);
+}
+li{
+  padding-bottom: 1.4rem;
+}
 //Texten som står på bilden och hur den anpassas
 .ptext {
     @include position(absolute, 50%, null, null, null);    
@@ -232,6 +246,9 @@ header {
 
 .ptext .border.trans{
     background-color: transparent;
+    color:black;
+    font-size: 30px;
+    font-weight: bold;
 }
 // Kod för att stänga av parallax effekten på mobila enheter 
 // så de inte överstressas.
@@ -293,7 +310,7 @@ footer{
 
 .socials a i{
   @include font-face("Helvetica", normal, 1.1rem);
-  transition: color .4s ease;
+  @include transition(color .4s ease);
 }
 
 .socials a:hover i{

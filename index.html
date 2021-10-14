@@ -5,24 +5,25 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
+            <!-- Generell kod för hela hemsidans struktur samt länkning till style-->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Parallax Effect</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     </head>
     <body>
         <header>
-            <h1 class="logo">Logo here</h1>
+            <!-- Nedan finns kod för navbar-->
+            <h1 class="logo">Logo </h1>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <nav>
               <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#picture2">Pic2</a></li>
-                <li><a href="#picture3">Pic3</a></li>
+                <li><a href="#aboutgame">Game Modes</a></li>
+                <li><a href="#modes">Ranking</a></li>
                 <li><a href="#footer">Contact</a></li>
               </ul>
             </nav>
@@ -31,58 +32,67 @@
             </label>
           </header>
 
-    
-        </nav> 
-        <div class="pimg1" id="picture1">
+            <!-- Bilden samt rubriken för första bild slide.-->
+        <div class="main" id="picture1">
             <div class="ptext">
                 <span class="border">
                     Rocket League
                 </span>
             </div>
         </div>
-
+            <!--Text med information om spelet.-->
         <section class="section section-dark">
-            <h2>Section One</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat obcaecati doloremque veniam numquam id quo maxime vero dolor autem. Dignissimos quibusdam mollitia similique corporis quaerat quia voluptas nulla repudiandae.</p>
-
+            <h2>About the game</h2>
+            <p>Rocket League, the sequel to Supersonic Acrobatic Rocket-Powered Battle-Cars, is a popular videogame that combines soccer and cars into its gameplay. For those who enjoy high-octane reckless driving and the world's most popular sport, Rocket League is the game for you. This cross-genre arena battler is the latest craze on PC, PS4, Xbox One and Nintendo Switch. Fun for all players and abilities, the game offers both a casual and competitive atmosphere, as well as a ton of laughs.<br></br> Rocket League was released on July 7, 2015 for Steam and PS4, February 17, 2016 for Xbox One and November 14, 2017 for Nintendo Switch. On September 23, 2020 Rocket League went free to play and was released on the Epic Games Store and was retired from Steam for new players.</p>
         </section>
         
-        <div class="pimg2" id="picture2">
+        <!-- Kod för bild samt rubriken för game modes-->
+        <div class="modes" id="aboutgame">
             <div class="ptext">
                 <span class="border trans">
-                    Img 2 Txt
+                    Game Modes
                 </span>
             </div>
         </div>
-
+            <!-- Textdel för game modes-->
         <section class="section section-dark">
-            <h2>Section One</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat obcaecati doloremque veniam numquam id quo maxime vero dolor autem. Dignissimos quibusdam mollitia similique corporis quaerat quia voluptas nulla repudiandae.</p>
+            <h2>Game modes</h2>
+            <ul>
+                <li>Play Online - This mode allows you to find a match with random players (Find Match) or to participate in a match with your friends (Private Match). An important thing to know is that before you begin your online session you can choose what types of matches interest you (like for example only 2v2 matches or only 3v3 and 4v4 matches). You can also decide if they are going to be standard matches or ranked ones (they are used for the purposes of the leaderboards). My recommendation is to avoid the online mode for at least a few hours. Spend your initial time with the game mastering tutorials and completing single matches so that you'll cover most of the basics of the game.
+                </li>
+                <li>Exhibition (single match) - Just as with the online mode, you can decide what type of matches you're interested in and that choice also involves picking one of the available stadiums. You can play with your friends (local play using split-screen) or take part in a match with bots controlled by the AI. If you've chosen bots you're allowed to decide on how advanced they will be. It's best to start with the Rookie or Pro levels so that you won't be constantly dominated by them. Once you've completed a lot of matches and practised all the advanced moves, you can try and set a higher difficulty setting for the bots to receive a real challenge from them.
+                </li>
+                <li>Season - This mode allows you to play only with bots - real players unfortunately can't take part in the season. Before the season starts you can decide on its length (=how many matches you will have to complete). The game also allows to set the number of players in both teams, AI levels for the bots, name and logo for the team (irrelevant changes) and how many teams will advance to the play-offs. The last setting is very important, because once the main part of the season has ended only the best teams get a promotion and join the play-offs. If you're aiming for winning the season you will have to be in the top four or the top six when the play-offs begin. Furthermore, each match in the play-offs must end with you winning, because otherwise you will end your championship prematurely. Winning the season is rewarded with a cup and some achievements.
+                </li>
+            </ul>
         </section>
-            <div class="pimg3" id="picture3">
+        <!-- Bild för rankingdelen -->
+            <div class="pimg3" id="modes">
                 <div class="ptext">
                     <span class="border trans">
-                        Img 3 Txt
+                        Ranking
                     </span>
                 </div>
             </div>
         
+            <!--Textdelen fär rankingtext-->
         <section class="section section-dark">
-            <h2>Section One</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quaerat obcaecati doloremque veniam numquam id quo maxime vero dolor autem. Dignissimos quibusdam mollitia similique corporis quaerat quia voluptas nulla repudiandae.</p>
+            <h2>Ranking</h2>
+            <p>There are currently 23 Rocket League ranks, if you include Unranked. Each rank is split into divisions, and there are four divisions in each rank.<br></br>Before the massive free-to-play update in September 2020, Grand Champion was the highest Rocket League rank that players could reach. However, Grand Champion has been knocked into second place and divided into three sub tiers, with Supersonic Legend now being the ultimate accolade for competitive Rocket League players.
+
+                It’s also worth noting that each of the competitive game modes in Rocket League have their own ranking ladder to climb, so you will have a different rank in each mode. For example, you could be a Platinum 3 player in Standard, but only Silver 2 in Doubles.</p>
+                <br></br> <p>Here is the ranks shown in order from the worst to the best:</p>
         </section>
 
-            <div class="pimg1">
+            <div class="ranking" id="ranking">
                 <div class="ptext">
-                    <span class="border">
-                        End 
-                    </span>
                 </div>
             </div>
+            <!-- Footer kod-->
         <footer>
             <div class="footer-content" id="footer">
                 <h3>SASS Library</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab distinctio accusantium ad dolorum maiores? Dolorem vel voluptatibus impedit itaque neque placeat, beatae ipsa porro inventore voluptas quam quis magni explicabo.</p>
+                <p>Assignment in Webdevelopment2</p>
                 <ul class="socials">
                     <li><a href="#"><i class="fa fa-paypal"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>

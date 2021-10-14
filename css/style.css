@@ -83,6 +83,7 @@ nav {
           transform: scale(1, 0);
   -webkit-transform-origin: top;
           transform-origin: top;
+  -webkit-transition: transform 400ms ease-in-out;
   -webkit-transition: -webkit-transform 400ms ease-in-out;
   transition: -webkit-transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out;
@@ -125,8 +126,8 @@ nav a {
 nav a:hover {
   opacity: 0.7;
   filter: alpha(opacity=70);
-  -webkit-transition: opacity .1s ease-out;
-  transition: opacity .1s ease-out;
+  -webkit-transition: opacity 0.1s ease-out;
+  transition: opacity 0.1s ease-out;
 }
 
 .nav-toggle:checked ~ nav {
@@ -205,6 +206,7 @@ nav a:hover {
     left: 0;
     -webkit-transform: scale(0, 1);
             transform: scale(0, 1);
+    -webkit-transition: transform ease-in-out 250ms;
     -webkit-transition: -webkit-transform ease-in-out 250ms;
     transition: -webkit-transform ease-in-out 250ms;
     transition: transform ease-in-out 250ms;
@@ -216,7 +218,7 @@ nav a:hover {
   }
 }
 
-.pimg1, .pimg2, .pimg3 {
+.main, .modes, .pimg3, .ranking {
   position: relative;
   opacity: 0.8;
   filter: alpha(opacity=80);
@@ -226,18 +228,23 @@ nav a:hover {
   background-attachment: fixed;
 }
 
-.pimg1 {
+.main {
   background-image: url("../img/main.png");
   min-height: 100%;
 }
 
-.pimg2 {
-  background-image: url("../img/gameplay.jpg");
+.modes {
+  background-image: url("../img/modes.jpg");
   min-height: 900px;
 }
 
 .pimg3 {
   background-image: url("../img/objective.jpg");
+  min-height: 900px;
+}
+
+.ranking {
+  background-image: url("../img/ranking.png");
   min-height: 900px;
 }
 
@@ -254,6 +261,19 @@ nav a:hover {
 .section-dark {
   background-color: #1f3944;
   color: coral;
+}
+
+h2 {
+  padding-bottom: 20px;
+}
+
+p {
+  -webkit-filter: drop-shadow(16px 16px 20px black);
+          filter: drop-shadow(16px 16px 20px black);
+}
+
+li {
+  padding-bottom: 1.4rem;
 }
 
 .ptext {
@@ -277,6 +297,9 @@ nav a:hover {
 
 .ptext .border.trans {
   background-color: transparent;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 @media (max-width: 568px) {
@@ -361,8 +384,8 @@ footer {
   font-family: "Helvetica";
   font-weight: normal;
   font-size: 1.1rem;
-  -webkit-transition: color .4s ease;
-  transition: color .4s ease;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
 }
 
 .socials a:hover i {
